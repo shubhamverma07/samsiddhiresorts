@@ -182,7 +182,7 @@ html {
 
 /* Specific Dimensions and Grid Position */
 .shooting-image {
-  background-image: url(img/samsiddhi2.jpeg);
+  background-image: url(samsiddhi2.jpeg);
   background-size: cover;
   width: 175px;
   height: 205px;
@@ -192,7 +192,7 @@ html {
 }
 
 .birthday-image {
-  background-image: url(img/samsiddhi3.jpeg);
+  background-image: url(samsiddhi3.jpeg);
   background-size: cover;
   width: 157px;
   height: 229px;
@@ -202,7 +202,7 @@ html {
 }
 
 .wedding-image {
-  background-image: url(img/samsiddhi6.jpeg);
+  background-image: url(samsiddhi6.jpeg);
   background-size: cover;
   width: 204px;
   height: 256px;
@@ -211,7 +211,7 @@ html {
 }
 
 .decorative-image {
-  background-image: url(img/samsiddhi5.jpeg);
+  background-image: url(samsiddhi5.jpeg);
   background-size: cover;
   width: 180px;
   height: 250px;
@@ -938,4 +938,5 @@ footer {
     height: 250px;
     /* Adjust height for mobile screens */
   }
+
 }
