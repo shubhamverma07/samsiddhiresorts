@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel Samsiddhi — Home</title>
+  <style>
+    :root{
+      --accent:#ff8b8b;
+      --accent-2:#ffb6b6;
+      --bg:#FFFFFF;
+      --card-bg: rgba(255,255,255,0.03);
+      --glass: rgba(255,255,255,0.04);
+      --radius:18px;
+      --max-width:1200px;
+      --container-pad:20px;
+      --text:#f7eaea;
+      --muted:#c8bfbf;
+      --shadow: 0 6px 20px rgba(0,0,0,0.6);
+    }
+
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:var(--text);background:var(--bg);line-height:1.45;margin:0}
+
+    /* layout */
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:30px var(--container-pad)}
+
+    /* navbar */
+    .navbar{position:sticky;top:12px;z-index:1200;background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));backdrop-filter:blur(6px);border-radius:28px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:var(--shadow);border:1px solid rgba(255,139,139,0.18);margin:0 12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand h1{font-size:20px;letter-spacing:1px;margin:0;color:var(--accent-2)}
+    .nav-links{display:flex;gap:18px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-weight:600}
+
+    /* hero */
+    .hero{position:relative;height:82vh;border-radius:28px;margin:18px;overflow:hidden;border:2px solid rgba(255,139,139,0.16)}
+    .bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,6,6,0.35), rgba(6,6,6,0.55));z-index:1}
+
+    .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:36px}
+
+    .title-pill{padding:14px 36px;border-radius:14px;border:2px solid rgba(255,139,139,0.28);background:rgba(0,0,0,0.25);font-size:clamp(18px,2.6vw,28px);color:var(--accent-2);margin-bottom:18vh}
+
+    /* booking form card */
+    .booking-card{width:92%;max-width:520px;background:var(--card-bg);padding:20px;border-radius:20px;border:1px solid rgba(255,139,139,0.12);box-shadow:var(--shadow);backdrop-filter:blur(6px)}
+    .booking-card h3{margin:0 0 12px 0;color:var(--accent-2);text-align:center}
+    .booking-row{display:flex;gap:10px;margin-bottom:10px}
+    .booking-row .col{flex:1}
+    .input, select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,139,139,0.12);background:transparent;color:var(--text);outline:none}
+    .book-btn{width:100%;padding:12px;margin-top:8px;border-radius:12px;border:none;background:var(--accent);color:#111;font-weight:700;cursor:pointer}
+
+    /* scroll down */
+    .scroll{position:absolute;left:50%;transform:translateX(-50%);bottom:18px;z-index:3}
+    .scroll a{display:inline-block;border-radius:50%;width:54px;height:54px;border:2px solid rgba(255,139,139,0.25);text-align:center;line-height:50px;color:var(--accent);text-decoration:none;background:rgba(0,0,0,0.25)}
+
+    /* content sections */
+    main{padding:40px 12px 120px}
+    .section{max-width:var(--max-width);margin:0 auto;padding:40px var(--container-pad)}
+    h2.section-title{font-size:clamp(20px,3vw,32px);color:var(--accent-2);margin-bottom:18px;text-align:center}
+
+    /* rooms grid */
+    .rooms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .room{background:var(--card-bg);border-radius:14px;overflow:hidden;border:1px solid rgba(255,139,139,0.08);box-shadow:0 6px 18px rgba(0,0,0,0.5)}
+    .room img{width:100%;height:160px;object-fit:cover;display:block}
+    .room-body{padding:14px}
+    .room-title{font-weight:700;color:var(--accent-2);margin-bottom:6px}
+    .room-desc{font-size:14px;color:var(--muted);margin-bottom:10px}
+    .room-meta{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .price{font-weight:800;color:var(--accent)}
+
+    /* gallery slider */
+    .gallery{position:relative;margin-top:20px}
+    .slides{display:flex;gap:12px;overflow:hidden}
+    .slide{min-width:100%;transition:transform .45s ease-in-out}
+    .slide img{width:100%;height:360px;object-fit:cover;border-radius:12px}
+    .gallery-controls{display:flex;justify-content:center;gap:8px;margin-top:12px}
+    .gbtn{padding:8px 12px;border-radius:8px;border:1px solid rgba(255,139,139,0.12);background:transparent;color:var(--muted);cursor:pointer}
+
+    /* contact + map */
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .contact-form{background:var(--card-bg);padding:18px;border-radius:12px;border:1px solid rgba(255,139,139,0.08)}
+    .map{min-height:260px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,139,139,0.08)}
+    .contact-form input, .contact-form textarea{width:100%;padding:12px;border-radius:8px;background:transparent;border:1px solid rgba(255,139,139,0.08);color:var(--text);margin-bottom:10px}
+    .contact-form button{padding:12px;border-radius:10px;background:var(--accent);border:none;color:#111;font-weight:700;cursor:pointer}
+
+    /* footer */
+    footer{margin-top:36px;padding:24px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,139,139,0.04)}
+
+    /* responsiveness tweaks */
+    @media (max-width:900px){
+      .hero{height:78vh}
+      .title-pill{top:18px;margin-bottom:10vh}
+      .map{min-height:200px}
+      .hero-inner{padding:24px}
+    }
+
+    @media (max-width:700px){
+      .navbar{flex-direction:column;align-items:center;padding:12px}
+      .contact-wrap{grid-template-columns:1fr}
+      .slide img{height:220px}
+      .hero{height:78vh}
+      .booking-card{max-width:94%;transform:none}
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="url(#g)" stroke-width="1.6"/></svg>
+        <h1>HOTEL SAMSIDDHI</h1>
+      </div>
+      <div class="nav-links" aria-hidden="true">
+        <a href="#rooms">Rooms</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero with background video">
+    <!-- Responsive video with poster (faster load on mobile) -->
+    <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="/mnt/data/788b7eb7-8993-443c-aca5-7d3860d9e875.png">
+      <source src="video-mobile.mp4" type="video/mp4" media="(max-width:600px)">
+      <source src="video-desktop.mp4" type="video/mp4">
+      <!-- If video fails, show poster image -->
+    </video>
+
+    <div class="hero-inner wrap">
+      <div class="title-pill">HOTEL SAMSIDDHI</div>
+
+      <div class="booking-card" role="region" aria-labelledby="bookTitle">
+        <h3 id="bookTitle">Reserve a Room</h3>
+        <form id="bookingForm">
+          <input class="input" type="text" id="name" name="name" placeholder="Full name" required>
+
+          <div class="booking-row">
+            <div class="col"><input class="input" type="date" id="checkin" name="checkin" required></div>
+            <div class="col"><input class="input" type="date" id="checkout" name="checkout" required></div>
+          </div>
+
+          <div class="booking-row">
+            <select name="guests" id="guests" class="input">
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4+ Guests</option>
+            </select>
+
+            <select name="rooms" id="rooms" class="input">
+              <option value="1">1 Room</option>
+              <option value="2">2 Rooms</option>
+              <option value="3">3 Rooms</option>
+            </select>
+          </div>
+
+          <button class="book-btn" type="submit">Check Availability</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="scroll"><a href="#rooms" aria-label="Scroll to rooms">⌄</a></div>
+  </section>
+
+
+  <main>
+    <!-- Rooms Section-->
+    <section id="rooms" class="section">
+      <h2 class="section-title">Our Room & Banquet</h2>
+      <div class="rooms-grid">
+
+        <article class="room" aria-labelledby="r1">
+          <img src="/mnt/data/788b7eb7-8993-443c-aca5-7d3860d9e875.png" alt="Deluxe Room image">
+          <div class="room-body">
+            <div class="room-title" id="r1">Deluxe Room</div>
+            <div class="room-desc">Comfortable room with queen bed, AC, minibar and city view.</div>
+            <div class="room-meta">
+              <div class="fac">Free Wi-Fi • Breakfast</div>
+              <div class="price">₹1,200/night</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="room" aria-labelledby="r2">
+          <img src="/mnt/data/788b7eb7-8993-443c-aca5-7d3860d9e875.png" alt="Superior Room image">
+          <div class="room-body">
+            <div class="room-title" id="r2">Banquet Hall</div>
+            <div class="room-desc">A grand banquet hall with luxurious interiors, high-capacity seating, advanced audio-visual setup, and customizable décor — perfect for weddings, receptions, and business events.</div>
+            <div class="room-meta">
+              <div class="fac">Banquet service</div>
+              <div class="price">₹1,50,000</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="room" aria-labelledby="r3">
+          <img src="/mnt/data/788b7eb7-8993-443c-aca5-7d3860d9e875.png" alt="Suite image">
+          <div class="room-body">
+            <div class="room-title" id="r3">Customised Event</div>
+            <div class="room-desc">Customised Event Setup • Catering • Decoration • Parties etc.</div>
+            <div class="room-meta">
+              <div class="fac">Rooms • Hall</div>
+              <div class="price">₹____</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <h2 class="section-title">Photo Gallery</h2>
+      <div class="gallery wrap">
+        <div class="slides" id="slides">
+          <div class="slide"><img src="/mnt/data/788b7eb7-8993-443c-aca5-7d3860d9e875.png" alt="Gallery 1"></div>
+          <div class="slide"><img src="/mnt/data/788b7eb7-8993-443c-aca5-7d3860d9e875.png" alt="Gallery 2"></div>
+          <div class="slide"><img src="/mnt/data/788b7eb7-8993-443c-aca5-7d3860d9e875.png" alt="Gallery 3"></div>
+        </div>
+
+        <div class="gallery-controls">
+          <button class="gbtn" id="prev">Prev</button>
+          <button class="gbtn" id="next">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact + Map -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact & Location</h2>
+      <div class="contact-wrap wrap">
+        <div class="contact-form" aria-labelledby="contactTitle">
+          <h3 id="contactTitle" style="color:var(--accent-2)">Get in touch</h3>
+          <form id="contactForm">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Your email" required>
+            <input type="tel" placeholder="Phone (optional)">
+            <textarea rows="4" placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="map">
+          <!-- simple google maps query embed -->
+          <iframe width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Hotel%20Samsiddhi&output=embed" title="Hotel location"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>© <strong>Hotel Samsiddhi</strong> — All rights reserved</div>
+        <div style="color:var(--muted)">Made with ❤️ • <a href="#contact" style="color:var(--accent);text-decoration:none">Contact us</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Booking form handler (demo)
+    document.getElementById('bookingForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Search submitted! (demo)');
+    });
+
+    // Contact form demo
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thanks — message sent (demo).');
+    });
+
+    // Simple gallery slider (no libraries)
+    (function(){
+      const slides = document.getElementById('slides');
+      const total = slides.children.length;
+      let idx = 0;
+
+      function update(){
+        slides.style.transform = `translateX(${ -idx * 100 }%)`;
+      }
+
+      document.getElementById('prev').addEventListener('click', ()=>{ idx = (idx - 1 + total) % total; update(); });
+      document.getElementById('next').addEventListener('click', ()=>{ idx = (idx + 1) % total; update(); });
+
+      // auto-play gallery
+      setInterval(()=>{ idx = (idx + 1) % total; update(); }, 4500);
+    })();
+
+    // Accessibility: prefer-reduced-motion
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('video, img').forEach(el => el.style.transition = 'none');
+    }
+  </script>
+
+</body>
+</html>

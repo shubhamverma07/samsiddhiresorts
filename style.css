@@ -1,0 +1,941 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff8e8b8;
+  padding: 10px 20px;
+  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  width: 100%;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  font-family: "Eczar", serif;
+}
+
+.navbar a {
+  border: 2px solid #AD8B3A;
+  background: #AD8B3A;
+  padding: 2px 15px;
+  border-radius: 10px;
+  margin: 0 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Eczar", serif;
+}
+
+.main {
+  padding: 20px;
+}
+
+/*Styling Hero Section of website.........................*/
+#hero {
+  background-image: url(heart.png);
+  background-position-x: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  max-width: 1300px;
+  height: 555px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.hero-content {
+  margin-top: 10px;
+  max-width: 510px;
+}
+
+#hero_head {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Courgette", cursive;
+}
+
+.hero-content p {
+  font-size: 25px;
+  margin: 10px 0;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+}
+
+#cont-btn > button,
+.button {
+  margin-top: 20px;
+  padding: 7px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #AD8B3A;
+  background: #AD8B3A;
+  font-family: "Sour Gummy", sans-serif;
+}
+
+/* Screen video section */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85vw;
+  height: 90vh;
+  border-radius: 5px;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.video-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 40px;
+  border-radius: 18px;
+  font-size: 1.5rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  color: #AD8B3A;
+  font-weight: bold;
+  font-family: "Eczar", serif;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+}
+
+.scroll-down a {
+  color: #AD8B3A;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Eczar", serif;
+  animation: bounce 1.6s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+
+/* Container for the Image Boxes */
+.hero_img {
+  margin-top: 20px;
+}
+
+/* Common Style for All Image Boxes */
+.image-container {
+  position: absolute;
+  border: 2px solid #AD8B3A;
+  border-radius: 15px;
+  color: #ff91a4;
+  text-align: center;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.image-container:hover {
+  z-index: 1;
+  transform: scale(1.5);
+}
+
+/* Specific Dimensions and Grid Position */
+.shooting-image {
+  background-image: url(img/samsiddhi2.jpeg);
+  background-size: cover;
+  width: 175px;
+  height: 205px;
+  top: 20%;
+  left: 74%;
+  transform: translateX(-50%);
+}
+
+.birthday-image {
+  background-image: url(img/samsiddhi3.jpeg);
+  background-size: cover;
+  width: 157px;
+  height: 229px;
+  top: 44%;
+  right: 9.5%;
+  transform: translateY(-50%);
+}
+
+.wedding-image {
+  background-image: url(img/samsiddhi6.jpeg);
+  background-size: cover;
+  width: 204px;
+  height: 256px;
+  bottom: 28%;
+  left: 54.5%;
+}
+
+.decorative-image {
+  background-image: url(img/samsiddhi5.jpeg);
+  background-size: cover;
+  width: 180px;
+  height: 250px;
+  bottom: 15%;
+  right: 20%;
+}
+
+/*Styling Service Card Section of website.........................*/
+#services,
+#sliding,
+#GAllary {
+  background-image: url(heart.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: -10px;
+  font-family: "Eczar", serif;
+}
+
+#h_p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Sour Gummy", sans-serif;
+}
+
+/* service card style */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  color: #AD8B3A;
+  margin-bottom: 10px;
+  font-family: "Eczar", serif;
+}
+
+.card p.small {
+  font-size: 17px;
+  color: black;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+}
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: #AD8B3A;
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+.card1 {
+  display: block;
+  position: relative;
+  max-width: 262px;
+  height: 250px;
+  background-color: #fff8e8;
+  border-radius: 10px;
+  padding: 25px 20px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  border-top-left-radius: 20%;
+}
+
+.card1:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: #AD8B3A;
+  height: 50px;
+  width: 50px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.50s ease-out;
+}
+
+.card1:hover:before {
+  transform: scale(21);
+}
+
+.card1:hover h3 {
+  transition: all 0.50s ease-out;
+  color: black;
+}
+
+.card1:hover p {
+  transition: all 0.50s ease-out;
+  color: black;
+}
+
+/* sliding section styling-------------------------------- */
+.slider-container {
+  background-color: #fff8e8;
+  max-width: 1200px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.slide_img {
+  height: 300px;
+  width: 270;
+  border-radius: 10px;
+  border-top-left-radius: 20%;
+}
+
+.slider-item {
+  display: flex;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s ease, transform 1s ease;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider-item.active {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}
+
+.slider-content {
+  margin-top: 20px;
+  width: 60%;
+  padding: 20px;
+  margin-right: 50px;
+}
+
+.slider-content h2 {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 22px;
+  color: #AD8B3A;
+  margin-bottom: 15px;
+  font-family: "Eczar", serif;
+}
+
+.slider-content p {
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+}
+
+.slider-image {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #fff8e8;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.dot.active {
+  opacity: 1;
+}
+
+/* Room Service section styling-------------------------------- */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.room {
+    background-color: #fff8e8;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.room img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.room-body {
+    padding: 20px;
+    text-align: left;
+}
+
+.room-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #AD8B3A;
+   font-family: "Eczar", serif;
+    margin-bottom: 8px;
+}
+
+.room-desc {
+    color: #323131;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.room-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+.room-meta .fac {
+    color: #aaa;
+}
+
+.price {
+    font-weight: 700;
+    color: #99792f;
+}
+
+
+/* Mobile Fixes */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .room img {
+        height: 180px;
+    }
+
+    .room-desc {
+        font-size: 0.9rem;
+    }
+
+    .room-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+
+/* Image Gallary section styling */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  max-width: 1200px;
+  margin: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 200px;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item:hover {
+  z-index: 1;
+  transform: scale(1.5);
+  cursor: pointer;
+  background-size: unset;
+}
+
+.large {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: 400px;
+}
+
+/* .medium{
+    grid-column: apsn 1.5 ;
+    grid-row: span 1.5;
+    height: 300px;
+  } */
+
+
+/* Get in touch section styling --------------- */
+.contact-section {
+  padding: 50px 0;
+}
+
+.contact-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  gap: 30px;
+}
+
+/* Left & Right exactly 50% */
+.map-box, .contact-box {
+  width: 50%;
+  border-radius: 25px;
+  background: #fdf6e9;
+  padding: 20px;
+}
+
+.map-box {
+  height: 450px;
+  overflow: hidden;
+}
+
+/* Contact details card */
+#cbox {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Eczar", serif;
+}
+.info-card {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #f7e9cf;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.social-links .icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    color: #99792f;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    background: #f7e9cf;
+    border: 2px solid #99792f;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .map-box, .contact-box {
+    width: 100%;
+  }
+
+  .map-box {
+    height: 300px;
+  }
+}
+
+/* Footer Styling.............................*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff8e8;
+  padding: 10px 20px;
+  border-top-right-radius: 20%;
+  border-top-left-radius: 20%;
+  width: 100%;
+}
+
+#credit {
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  font-family: "Sour Gummy", sans-serif;
+}
+
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  /* Adjust spacing from the bottom */
+  right: 20px;
+  /* Adjust spacing from the right */
+  z-index: 1000;
+  /* Ensure it appears on top */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  background-color: #AD8B3A;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+/* WhatsApp Icon Image */
+.whatsapp-button .fa-brands {
+  font-size: 25px;
+  color: white;
+}
+
+#whats_text {
+  font-size: 20px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+
+
+
+/* Responsive Styles for Mobile Device */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 16px;
+  }
+
+  .navbar a {
+    border: 1px solid #AD8B3A;
+    padding: 2px 10px;
+    margin: 0 1px;
+    font-size: 14px;
+  }
+
+  #hero {
+    display: flex;
+    height: 250px;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .hero-content {
+    margin-top: 0px;
+  }
+
+  #hero_head {
+    font-size: 18px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .image-container {
+    display: none;
+  }
+
+  #cont-btn button,
+  .button {
+    margin-top: 15px;
+    padding: 5px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+    width: 100%;
+  }
+
+  .card1 {
+    max-width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    padding: 20px 15px;
+    margin: 5px;
+    border-top-left-radius: 10%;
+  }
+
+  .card h3 {
+    font-size: 18px;
+    line-height: 20px;
+    color: #AD8B3A;
+    margin-bottom: 5px;
+    font-family: "Eczar", serif;
+  }
+
+  .card p.small {
+    font-size: 14px;
+  }
+
+  .slider-container {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .slider-content,
+  .slider-image {
+    width: 100%;
+    border-left: none;
+  }
+
+  .slider-content {
+    margin-top: 0px;
+    width: 70%;
+    padding: 20px;
+    margin-right: 0px;
+  }
+
+  .slide_img {
+    height: 280px;
+    width: 140px;
+    border-radius: 5px;
+    border-top-left-radius: 10%;
+  }
+
+  .slider-content h2 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #AD8B3A;
+    margin-bottom: 5px;
+    font-family: "Eczar", serif;
+  }
+
+  .slider-content p {
+    font-size: 12px;
+  }
+
+  .heading {
+    margin-top: 5px;
+    font-size: 25px;
+    font-family: "Eczar", serif;
+  }
+
+  #h_p {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Sour Gummy", sans-serif;
+  }
+
+  #get_touch {
+    background-image: url(heart.png);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .content {
+    border-radius: 5px;
+    padding: 5px;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+  }
+
+  .contact-details .info>div {
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 215px;
+  }
+
+  .info_h {
+    font-size: 18px;
+  }
+
+  .info_p {
+    font-size: 15px;
+  }
+
+  #credit {
+    font-size: 15px;
+  }
+
+  form input,
+  form textarea {
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .contact-form,
+  .contact-details {
+    margin: 8px;
+    border-radius: 5px;
+    padding: 14px;
+    border-top-left-radius: 5%;
+  }
+
+  .contact-form h2,
+  .contact-details h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  form label {
+    font-size: 16px;
+  }
+
+  /* WhatsApp Icon Image */
+  .whatsapp-button {
+    bottom: 55px;
+    /* Adjust spacing from the bottom */
+    right: 25px;
+    /* Adjust spacing from the right */
+    z-index: 1000;
+    /* Ensure it appears on top */
+    width: 90px;
+    height: 40px;
+  }
+
+  .whatsapp-button .fa-brands {
+    font-size: 22px;
+  }
+
+  #whats_text {
+    font-size: 18px;
+    margin-left: 5px;
+  }
+
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns on medium screens */
+  }
+
+  .large {
+    height: 350px;
+    /* Adjust height for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on smaller screens */
+  }
+
+  .large {
+    height: 300px;
+    /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    /* 1 column on mobile screens */
+  }
+
+  .large {
+    height: 250px;
+    /* Adjust height for mobile screens */
+  }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Samsiddhi</title>
+  <style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* Sticky Navbar */
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+  border-bottom: 1px solid #ff7b7b;
+}
+
+.navbar h2 {
+  color: #ff8686;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Hero Section with Video */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Responsive Background Video */
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* Center Text */
+.video-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 40px;
+  border: 2px solid #ff9898;
+  border-radius: 18px;
+  font-size: 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffb3b3;
+}
+
+/* Scroll Button */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+}
+
+.scroll-down a {
+  color: #ff9898;
+  text-decoration: none;
+  animation: bounce 1.6s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* Next Section */
+.content {
+  padding: 50px 20px;
+  background: #111;
+  text-align: center;
+}
+
+.content h1 {
+  color: #ffb0b0;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navigation -->
+  <nav class="navbar">
+    <h2>HOTEL SAMSIDDHI</h2>
+  </nav>
+
+  <!-- Fullscreen Video Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline class="bg-video">
+      <!-- Replace with your video file -->
+      <source src="img/samsiddhi1.mp4" type="video/mp4">
+    </video>
+
+    <!-- Text Over Video -->
+    <div class="video-text">
+      HOTEL SAMSIDDHI
+    </div>
+
+    <!-- Scroll Button -->
+    <div class="scroll-down">
+      <a href="#next">⌄</a>
+    </div>
+  </section>
+
+  <!-- Next Section -->
+  <section id="next" class="content">
+    <h1>Welcome to Hotel Samsiddhi</h1>
+    <p>Your next section content goes here...</p>
+  </section>
+
+</body>
+</html>
