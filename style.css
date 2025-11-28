@@ -126,7 +126,7 @@ html {
   transform: translate(-50%, -50%);
   padding: 15px 40px;
   border-radius: 18px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   background: rgba(0, 0, 0, 0.3);
   color: #AD8B3A;
@@ -523,6 +523,18 @@ html {
     }
 }
 
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85vw;
+  height: 90vh;
+  border-radius: 5px;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
 
 /* Image Gallary section styling */
 .gallery {
@@ -734,6 +746,31 @@ footer {
     display: none;
   }
 
+.hero {
+    height: 55vh;
+}
+  
+  .bg-video {
+    top: 45%;
+    height: 40vh;
+}
+  
+  .video-text {
+    top: 92%;
+    padding: 2px 90px;
+    border-radius: 14px;
+    font-size: 1rem;
+    text-align: center;}
+
+  #services {
+    margin-top: 23px;
+}
+  
+  .scroll-down a {
+    display: none;
+}
+
+
   #cont-btn button,
   .button {
     margin-top: 15px;
@@ -940,3 +977,4 @@ footer {
   }
 
 }
+
